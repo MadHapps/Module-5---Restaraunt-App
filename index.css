@@ -1,0 +1,199 @@
+html {
+    font-family: 'Source Sans 3', sans-serif;
+    color: #282828
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 17rem;
+    max-width: 60rem;
+    margin: 0 auto;
+    background-color: #282828;
+} 
+
+img{
+    min-width: 3rem;
+    max-width: 100%;
+    display: block;
+}
+
+/* ORDER FORM */
+
+.order-form {
+    display: grid;
+    width: 100%;
+}
+
+.order-selection-container {
+    padding: 0 1.25rem;
+    background-color: #FFFBEB;
+    border-bottom: 2px solid black;
+}
+
+.os__food-item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.os__food-item:not(:last-child) {
+    border-bottom: 2px solid lightgrey;
+}
+
+.os__food-item img {
+    max-width: 7.5%;
+}
+
+.fi__text-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.fi__text {
+    margin: .75rem 0;
+    display: grid;
+    gap: .35rem;
+    min-width: 17ch;
+    width: 60%;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.fi__text-name {
+    font-weight: 900;
+    font-size: 1.15em;
+    white-space: nowrap;
+}
+
+.fi__text-ingredients {
+    max-width: 100%;
+}
+
+.fi__text-price {
+    font-weight: 700;
+}
+
+.fi-add-to-cart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 40%;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+@media (max-width: 25.5rem) {
+    .fi-add-to-cart-wrapper {
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
+        margin: .75rem 0;
+    }
+
+    .fi-add-to-cart-wrapper p {
+        margin: 0 1.1rem;
+    }
+}
+
+.add-to-cart {
+    color: #404040;
+    padding: .22em .22em .15em .22em;
+    margin: .5rem;
+    border: 1px solid gray;
+    border-radius: 50%;
+}
+
+.add-to-cart:hover {
+    opacity: .75;
+    transition: .15s ease;
+}
+
+.add-to-cart:active {
+    opacity: .5;
+    transition: .05s ease;
+}
+
+/* SUMMARY */
+
+.order-details {
+    display: grid;
+    align-items: center;
+    background-color: #fbfbf9;
+    text-align: center;
+}
+
+.od-food-items-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: .25rem 0;
+    gap: .5em;
+}
+
+.od-food-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.75rem;
+}
+
+.od-food-item > div {
+    display: flex;
+    align-items: center;
+    gap: .33em;
+}
+
+.od-food-item-name {
+    font-weight: 600;
+}
+
+.od-total-price {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+    border-top: 2px solid lightgray;
+    width: 90%;
+    padding: 1rem .5rem;
+    font-size: 1em;
+}
+
+.od-food-item--remove-btn {
+    border: none;
+    background: none;
+    transition: .3s ease;
+    margin-inline-end: .6rem;
+}
+
+.od-food-item--remove-btn:hover {
+    opacity: .8;
+    transition: .3s ease;
+}
+
+.od-food-item--remove-btn:active {
+    opacity: .5;
+}
+
+.od-btn-container {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.od-btn-container button {
+    width: 100%;
+    max-width: 20rem;
+    padding: .5em;
+    background-color: #15db99;
+    border: none;
+    border-radius: .25em;
+}
+
+.od-btn-container button:active {
+    background-color: #10a775;
+}
