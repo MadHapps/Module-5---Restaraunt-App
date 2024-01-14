@@ -124,10 +124,16 @@ img{
 /* SUMMARY */
 
 .order-details {
+    background-color: #fbfbf9;
+    width: 100%;
+}
+
+.order-details-wrapper {
     display: grid;
     align-items: center;
-    background-color: #fbfbf9;
     text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .od-food-items-wrapper {
@@ -148,7 +154,7 @@ img{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    gap: .33em;
     width: 100%;
 }
 
