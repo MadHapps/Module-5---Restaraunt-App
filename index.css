@@ -171,7 +171,7 @@ img{
     margin: 0 auto;
     border-top: 2px solid lightgray;
     width: 90%;
-    padding: 1rem .5rem;
+    padding: 1rem .5rem 0 .5rem;
     font-size: 1.1em;
     font-weight: 500;
 }
@@ -194,6 +194,7 @@ img{
 
 .od-total-price div:last-child {
     border-top: 2px solid lightgrey;
+    padding: 1rem 0;
     font-size: 1.25em;
     font-weight: bold;
 }
@@ -216,16 +217,19 @@ img{
 
 .od-btn-container {
     width: 100%;
-    padding: 1rem 0;
+    padding: 0 0 1rem 0;
 }
 
 .od-btn-container button {
     width: 100%;
-    max-width: 20rem;
+    max-width: 25.5rem;
     padding: .5em;
     background-color: #15db99;
     border: none;
     border-radius: .25em;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: whitesmoke;
 }
 
 .od-btn-container button:active {
