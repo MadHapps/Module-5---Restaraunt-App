@@ -1,6 +1,5 @@
 import { menuArray } from "./data.js";
 
-const orderSelection = document.getElementById('order-selection-container')
 let checkoutArray = []
 
 addEventListener('click', (e) => {
@@ -201,6 +200,7 @@ function calculateOrderTotal() {
 }
 
 function render() {
+    const orderSelection = document.getElementById('order-selection-container')
     const orderDetails = document.getElementById('od-food-items-wrapper')
     const orderPrice = document.getElementById('od-total-price')
 
