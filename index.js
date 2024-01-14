@@ -4,12 +4,12 @@ const orderSelection = document.getElementById('order-selection-container')
 let checkoutArray = []
 
 addEventListener('click', (e) => {
-    console.log(e.target)
+
     if (e.target.dataset.fiPlus) {
         increment(e.target.dataset.fiPlus)
     }
     else if (e.target.dataset.fiMinus) {
-        decrement(e.target.dataset.fiMinus)
+        decrement(e.target.dataset.fiMinus) 
     }
     else if (e.target.dataset.removeOrder) {
         removeOrder(e.target.dataset.removeOrder)
@@ -20,7 +20,7 @@ function increment(target) {
     if (sessionStorage.getItem(target)) {
         let quantity = parseInt(sessionStorage.getItem(target))
         sessionStorage.setItem(target, ++quantity)
-
+        console.log(`IF`)
         checkoutArray.forEach((item) => {
             if (parseInt(target) === item.id) {
                 item.quantity = quantity
@@ -30,6 +30,7 @@ function increment(target) {
         render()
     }
     else {
+        console.log(`ELSE`)
         sessionStorage.setItem(target, 1)
 
         menuArray.forEach((item) => {
@@ -42,7 +43,7 @@ function increment(target) {
 
         render()
     }
-
+    console.log(checkoutArray)
     storeCheckoutArrayForSession(checkoutArray)
 }
 
@@ -59,7 +60,6 @@ function decrement(target) {
                 render()
             }
         })
-        // render()
         if (parseInt(sessionStorage.getItem(target)) <= 0) {
             checkoutArray.forEach((item, index) => {
                 if (parseInt(target) === item.id) {
@@ -72,21 +72,23 @@ function decrement(target) {
 
             sessionStorage.removeItem(target)
         }
-
+        console.log(checkoutArray)
         storeCheckoutArrayForSession(checkoutArray)
     }
 }
 
 function removeOrder(target) {
-    checkoutArray.forEach((item, index) => {
-        if (item.id === parseInt(target)) {
-            checkoutArray.splice(index, 1)
-            sessionStorage.setItem('checkoutData', JSON.stringify(checkoutArray))
-            sessionStorage.removeItem(target)
+        checkoutArray.forEach((item, index)=> {
+            if (item.id === parseInt(target)) {
+                item.quantity = 0
+                checkoutArray.splice(index, 1)
+                sessionStorage.setItem('checkoutData', JSON.stringify(checkoutArray))
+                sessionStorage.removeItem(target)
 
-            render()
-        }
-    })
+                render()
+            }
+            console.log(checkoutArray)
+        })
 }
 
 function storeCheckoutArrayForSession(arr) {
@@ -127,15 +129,17 @@ function createMenuSelectionHtml(foodItems) {
 
 function createOrderSummaryHtml() {
 
-    if (checkoutArray.length === 0 && sessionStorage.getItem('checkoutData') && sessionStorage.getItem('checkoutData').length > 0) {
+    if(checkoutArray.length === 0 && sessionStorage.getItem('checkoutData') && sessionStorage.getItem('checkoutData').length > 0) {
         checkoutArray = JSON.parse(sessionStorage.getItem('checkoutData'))
+        console.log(`hello 1`)
     }
     else if (checkoutArray.length === 0 && !sessionStorage.getItem('checkoutData')) {
         sessionStorage.setItem('checkoutData', [])
+        console.log(`hello 2`)
     }
 
     let html = ``
-    if (checkoutArray.length > 0 || sessionStorage.getItem('checkoutData').length > 0) {
+    if(checkoutArray.length > 0 || sessionStorage.getItem('checkoutData').length > 0) {
         checkoutArray.forEach((item) => {
             html += `
             <div class="od-food-item">
@@ -166,7 +170,7 @@ function calculateOrderTotal() {
 function render() {
     const orderDetails = document.getElementById('od-food-items-wrapper')
 
-    setTimeout((e) => {
+    setTimeout((e)=> {
         orderSelection.innerHTML = createMenuSelectionHtml(menuArray)
         orderDetails.innerHTML = createOrderSummaryHtml(checkoutArray)
         calculateOrderTotal()
