@@ -139,8 +139,8 @@ function createOrderSummaryHtml() {
         checkoutArray.forEach((item) => {
             html += `
             <div class="od-food-item">
+                <p class="od-food-item--quantity">${item.quantity}x</p>
                 <div>
-                    <p class="od-food-item--quantity">x${item.quantity}</p>
                     <p class="od-food-item-name">${item.name}</p>
                     <button class="od-food-item--remove-btn" data-remove-order=${item.id}>remove</button>
                 </div>
@@ -167,7 +167,9 @@ function calculateOrderTotal() {
 
     if (checkoutItemPrices.length > 0) {
         originalPrice = checkoutItemPrices.reduce((total, currentItem) => total + currentItem)
-        discount = sushiRollPrices.reduce((a, b) => a + b) * .5
+        if (sushiRollPrices.length > 0) {
+            discount = sushiRollPrices.reduce((a, b) => a + b) * .5
+        }
         subtotal = originalPrice - discount
         tax = subtotal * .0725
         orderTotal = subtotal + tax

@@ -147,7 +147,9 @@ img{
 .od-food-item > div {
     display: flex;
     align-items: center;
-    gap: .33em;
+    justify-content: space-between;
+
+    width: 100%;
 }
 
 .od-food-item-name {
@@ -171,7 +173,8 @@ img{
 .od-total-price div {
     display: flex;
     justify-content: space-between;
-    width: 35%;
+    width: 100%;
+    min-width: 16rem;
 }
 
 .od-total-price div p span{
