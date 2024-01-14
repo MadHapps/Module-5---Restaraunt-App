@@ -1,6 +1,7 @@
 html {
     font-family: 'Source Sans 3', sans-serif;
-    color: #282828
+    color: #282828;
+    user-select: none;
 }
 
 p {
