@@ -89,7 +89,7 @@ export const menuArray = [
         name: "Deep Fried Gyoza",
         type: ["appetizer", "deep fried potstickers"],
         ingredients: ["pork", "cabbage"].join(', '),
-        price: 23.5,
+        price: 6.95,
         emoji: "🥟",
         icon: "/images/potsticker-icon.png",
         quantity: 0,
