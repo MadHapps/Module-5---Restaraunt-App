@@ -17,6 +17,19 @@ addEventListener('click', (e) => {
         checkoutModal.classList.toggle('show')
         console.log('I WAS CLICKED!')
     }
+    else if (e.target.id === 'checkout-form-pay-btn') {
+        const paymentForm = document.getElementById('payment-form')
+        const paymentFormData = new FormData(paymentForm)
+
+        console.log(`Name: ${paymentFormData.get('name')}`)
+        console.log(`Credit Card Number: ${paymentFormData.get('cardNumber')}`)
+        console.log(`CVV: ${paymentFormData.get('CVV')}`)
+        // setTimeout((e)=> {
+        //     const checkoutModal = document.getElementById('checkout-modal')
+        //     checkoutModal.classList.toggle('show')
+        //     alert(`THAT'S A NICE CREDIT CARD NUMBER! ESTIMATED DELIVERY TIME: 9 YEARS.`)
+        // }, 275)
+    }
     else if (e.target.id === 'close-modal') {
         const checkoutModal = document.getElementById('checkout-modal')
         checkoutModal.classList.toggle('show')

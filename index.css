@@ -242,31 +242,35 @@ img{
 /* MODAL */
 
 .checkout-modal-wrapper {
-    position: fixed;
-    flex-direction: column;
-    display: grid;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(245, 245, 245, 0.466);
-}
+} 
 
 .show {
     display: none;
 }
 
 .modal-form-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    justify-content: center;
-    width: 100%;
-    padding: 1.25rem;
+    display: grid;
+    align-items: center;
+    position: fixed;
+    inset: auto 0;
+    min-width: 12rem;
+    max-width: 26rem;
+    padding: 2rem;
+    height: fit-content;
+    inset: 0;
+    margin: auto;
     background-color: whitesmoke;
     border-radius: 4.6px;
     border: 1px solid lightgray;
     box-shadow: 1px 1px 5px lightgray;
+}
+
+.close-modal-wrapper {
+    text-align: end;
 }
 
 .close-modal {
@@ -278,26 +282,18 @@ img{
     opacity: .75;
 }
 
-.modal-form-input-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    gap: 1rem;
-    width: 100%;
-}
-
+.modal-form-input-wrapper,
 .checkout-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
     gap: 1rem;
+    width: 100%;
 }
 
 .checkout-form input{
-    padding: .5rem;
     width: 100%;
+    padding: 1rem;
     border: 1px solid #cccccc;
     box-shadow: 0px 1px 5px lightgray;
     border-radius: 4.6px;

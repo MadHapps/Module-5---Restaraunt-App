@@ -22,18 +22,40 @@
 </head>
 
 <body>
-    <div id="checkout-modal" class="checkout-modal-wrapper show">
+    <div id="checkout-modal" class="checkout-modal-wrapper">
             <div class="modal-form-wrapper">
-                <div>
+                <div class="close-modal-wrapper">
                     <i class="fa-solid fa-x close-modal" id="close-modal"></i>
                 </div>
                 <div class="modal-form-input-wrapper">
                     <h3>Enter card details</h3>
-                    <form action="" class="checkout-form">
-                        <input type="text" placeholder="Enter your name" required>
-                        <input type="text" placeholder="Enter card number" required>
-                        <input type="text" placeholder="Enter CVV" required>
-                        <input type="submit" class="checkout-form-pay-btn" value="Pay">
+                    <form id="payment-form" class="checkout-form">
+                        <input 
+                            type="text"
+                            name="name" 
+                            placeholder="Enter your name" 
+                            pattern="[a-z]{3,24}"
+                            title="Enter a name 3-24 characters long."
+                            required>
+                        <input 
+                            type="text"
+                            name="cardNumber" 
+                            placeholder="Enter card number"
+                            pattern="[0-9]{15,16}"
+                            title="Enter a valid credit card number."
+                            required>
+                        <input 
+                            type="text"
+                            name="CVV"
+                            placeholder="Enter CVV" 
+                            pattern="[0-9]{3,4}"
+                            title="Enter a valid CVV number."
+                            required>
+                        <input 
+                            type="submit" 
+                            id="checkout-form-pay-btn"
+                            class="checkout-form-pay-btn" 
+                            value="Pay">
                     </form>
                 </div>
             </div>
