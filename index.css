@@ -4,12 +4,13 @@ html {
     user-select: none;
 }
 
-p {
+p, h3 {
     margin: 0;
     padding: 0;
 }
 
 body {
+    position: relative;
     min-width: 17rem;
     max-width: 60rem;
     margin: 0 auto;
@@ -121,7 +122,7 @@ img{
     transition: .05s ease;
 }
 
-/* SUMMARY */
+/* ORDER SELECTION SUMMARY */
 
 .order-details {
     background-color: #fbfbf9;
@@ -161,6 +162,8 @@ img{
 .od-food-item-name {
     font-weight: 600;
 }
+
+/* ORDER PRICE SUMMARY */
 
 .od-total-price {
     display: flex;
@@ -235,3 +238,79 @@ img{
 .od-btn-container button:active {
     background-color: #10a775;
 }
+
+/* MODAL */
+
+.checkout-modal-wrapper {
+    position: fixed;
+    flex-direction: column;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 245, 245, 0.466);
+}
+
+.show {
+    display: none;
+}
+
+.modal-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    padding: 1.25rem;
+    background-color: whitesmoke;
+    border-radius: 4.6px;
+    border: 1px solid lightgray;
+    box-shadow: 1px 1px 5px lightgray;
+}
+
+.close-modal {
+    color: #282828;
+    width: fit-content;
+}
+
+.close-modal:active {
+    opacity: .75;
+}
+
+.modal-form-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    width: 100%;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.checkout-form input{
+    padding: .5rem;
+    width: 100%;
+    border: 1px solid #cccccc;
+    box-shadow: 0px 1px 5px lightgray;
+    border-radius: 4.6px;
+}
+
+.checkout-form-pay-btn {
+    background-color: #15db99;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.checkout-form-pay-btn:active {
+    background-color: #10a775;
+}
+

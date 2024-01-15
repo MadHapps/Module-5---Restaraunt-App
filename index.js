@@ -3,7 +3,6 @@ import { menuArray } from "./data.js";
 let checkoutArray = []
 
 addEventListener('click', (e) => {
-
     if (e.target.dataset.fiPlus) {
         increment(e.target.dataset.fiPlus)
     }
@@ -12,6 +11,15 @@ addEventListener('click', (e) => {
     }
     else if (e.target.dataset.removeOrder) {
         removeOrder(e.target.dataset.removeOrder)
+    }
+    else if (e.target.id === 'order-btn') {
+        const checkoutModal = document.getElementById('checkout-modal')
+        checkoutModal.classList.toggle('show')
+        console.log('I WAS CLICKED!')
+    }
+    else if (e.target.id === 'close-modal') {
+        const checkoutModal = document.getElementById('checkout-modal')
+        checkoutModal.classList.toggle('show')
     }
 })
 
@@ -208,7 +216,7 @@ function render() {
         orderSelection.innerHTML = createMenuSelectionHtml(menuArray)
         orderDetails.innerHTML = createOrderSummaryHtml(checkoutArray)
         orderPrice.innerHTML = calculateOrderTotal()
-    }, 100)
+    }, 50)
 
 }
 
