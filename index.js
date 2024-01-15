@@ -24,11 +24,8 @@ addEventListener('click', (e) => {
         console.log(`Name: ${paymentFormData.get('name')}`)
         console.log(`Credit Card Number: ${paymentFormData.get('cardNumber')}`)
         console.log(`CVV: ${paymentFormData.get('CVV')}`)
-        // setTimeout((e)=> {
-        //     const checkoutModal = document.getElementById('checkout-modal')
-        //     checkoutModal.classList.toggle('show')
-        //     alert(`THAT'S A NICE CREDIT CARD NUMBER! ESTIMATED DELIVERY TIME: 9 YEARS.`)
-        // }, 275)
+        
+        clearOrder()
     }
     else if (e.target.id === 'close-modal') {
         const checkoutModal = document.getElementById('checkout-modal')
@@ -107,6 +104,12 @@ function removeOrder(target) {
             render()
         }
     })
+}
+
+function clearOrder() {
+    checkoutArray = []
+    sessionStorage.clear()
+    render()
 }
 
 function storeCheckoutArrayForSession(arr) {
